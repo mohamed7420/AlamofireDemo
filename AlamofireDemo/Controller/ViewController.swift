@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {return}
+        
+        let request = NetworkClient()
+        
+        request.makeAlamofireRequest(url)
+        
     }
 
 
